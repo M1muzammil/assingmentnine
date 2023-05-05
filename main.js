@@ -65,5 +65,55 @@ function average(){
 
 
 }
+function palindorome() {
+    let text = document.getElementById("fourth4").value;
+
+    let cleanedValue = text.toLowerCase();
+
+    let reversedValue = cleanedValue.split("").reverse().join("");
+    let result = "";
+    if (cleanedValue === reversedValue) {
+        result = `<i>'${text}'</i> Is Palindrome`;
+    } else {
+        result = `<i>'${text}'</i> Is Not Palindrome`;
+    }
+
+    document.getElementById("fourth").innerHTML = result;
+}
+function short() {
+    let values = document.getElementById("fifth5");
+    values = values.value.split(",");
+
+    let result = values.sort();
+
+    document.getElementById("fifth").innerHTML = result;
+}
+function primeNumbers() {
+    let number = document.getElementById("six6").value;
+    number = Number(number);
+
+    let result = "";
+
+    let isPrime = true;
+    if (number < 1) {
+        isPrime = false;
+    } else {
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) {
+                isPrime = false;
+                break;
+            }
+        }
+    }
+
+    if (isPrime === true) {
+        result = `<i>'${number}'</i> Is A Prime Number`;
+    } else {
+        result = `<i>'${number}'</i> Is Not A Prime Number`;
+    }
+
+    document.getElementById("six").innerHTML = result;
+}
+
     
     
